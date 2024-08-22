@@ -1,11 +1,3 @@
-/* Code to view on the Serial Monitor the values of the Gyroscope
- * and the output for the mouse. This is equal to the standard code
- * but with instructions to check the values on the Serial monitor.
- * Change the delay to read the values at reduced speed.
- * 
- * Gabry295
- */
-
 #include <Wire.h>
 #include <I2Cdev.h>
 #include <MPU6050.h>
@@ -14,19 +6,19 @@
 
 MPU6050 mpu;
 int16_t ax, ay, az, gx, gy, gz;
-int dps_x = 1;
-int dps_y = 1;
-int dps_mode = 2;
+int dpi_x = 1;
+int dpi_y = 1;
+int dpi_mode = 2;
 
 const int mode_1 = 1000;
 const int mode_2 = 400; //with VALORANT sens 0.67
-//dps mode 1 = mouse, 2 = playing, 3 = disable
+//dpi mode 1 = mouse, 2 = playing, 3 = disable
 
 // int devide(int varible){
 //   return varible / 1000;
 // }
 
-// int dps_switch(int mode){
+// int dpi_switch(int mode){
 //   if (mode == 3)
 //   {
 //     mode = 1;
@@ -38,7 +30,7 @@ const int mode_2 = 400; //with VALORANT sens 0.67
 //   return mode;
 // }
 
-int dps_set_x(int x, int mode)
+int dpi_set_x(int x, int mode)
 {
   if (mode == 1)
   {
@@ -54,7 +46,7 @@ int dps_set_x(int x, int mode)
   // }
   return x;
 }
-int dps_set_y(int y, int mode)
+int dpi_set_y(int y, int mode)
 {
   if (mode == 1)
   {
@@ -122,19 +114,19 @@ void loop() {
   {
     Mouse.release(MOUSE_RIGHT);
   }
-  // dps
+  // dpi
   if (bt8_Gun == LOW)
   {
-    if (dps_mode == 1)
+    if (dpi_mode == 1)
     {
-      dps_mode = 2;
+      dpi_mode = 2;
     }
     Keyboard.press('1');
     Keyboard.release('1');
   }
   if (bt5_Mouse == LOW)
   {
-    dps_mode = 1;
+    dpi_mode = 1;
   }
   //Reload
   if (bt4_Reload == LOW)
@@ -144,9 +136,9 @@ void loop() {
   }
   // Serial.print(gz); Serial.print("\t");
   // Serial.println(gy);
-  dps_x = -(dps_set_x(gz, dps_mode));
-  dps_y = dps_set_y(gy, dps_mode);
-  Mouse.move(dps_x, dps_y);
+  dpi_x = -(dpi_set_x(gz, dpi_mode));
+  dpi_y = dpi_set_y(gy, dpi_mode);
+  Mouse.move(dpi_x, dpi_y);
   // Mouse.move(-gz/1000, gy/1000);
   // Serial.print("bt6_Right: ");
   // Serial.println(bt6_Right);
