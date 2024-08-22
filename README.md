@@ -25,4 +25,4 @@ A Gun which can play shooting game on PC
 ![image](https://github.com/samuelhsieh0829/Arduino_Gun/blob/80bbd91a63e4892f1d3e34b0ef7e20ad3c877a9f/IMG_2359.jpg)
 ![image](https://github.com/samuelhsieh0829/Arduino_Gun/blob/80bbd91a63e4892f1d3e34b0ef7e20ad3c877a9f/IMG_2360.jpg)
 ![image](https://github.com/samuelhsieh0829/Arduino_Gun/blob/80bbd91a63e4892f1d3e34b0ef7e20ad3c877a9f/IMG_2361.jpg)
-![image](https://github.com/samuelhsieh0829/Arduino_Gun/blob/80bbd91a63e4892f1d3e34b0ef7e20ad3c877a9f/IMG_2360_.jpg)
+![image](https://github.com/samuelhsieh0829/Arduino_Gun/blob/715ebd775bf5ea5e9277a842b285bca8266e415a/IMG_2360_.jpg)
